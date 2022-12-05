@@ -18,6 +18,15 @@ function App() {
   };
  
 
+  const onChangeUserAccess = (user, updatedAccess) => {
+    const users = [...invitedUsers]
+    const updatingUserIndex = users.findIndex(_user => _user.name === user.name)
+    const userToUpdate = users[updatingUserIndex]
+    userToUpdate.accessUser = updatedAccess
+    console.log(users,user, updatedAccess)
+    setInvitedUsers(users)
+  }
+
   const ShareButton = () => {
     return (
       <div style={{ marginTop: "124px", marginLeft: "124px" }}>
@@ -39,6 +48,7 @@ function App() {
             }}
             invitedUsers={invitedUsers}
             onCopy={() => alert("Link Copied to clipboard")}
+            onChangeUserAccess={onChangeUserAccess}
           />
         )}
       </div>

@@ -7,7 +7,8 @@ import icon from "../../assets/Icon.png";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import "./modal.css";
 
-const ShareModal = ({ onInputClick, onCopy, invitedUsers }) => {
+const ShareModal = ({ onInputClick, onCopy, invitedUsers, onChangeUserAccess}) => {
+
   return (
     <>
       <div className="modal-card">
@@ -102,7 +103,8 @@ const ShareModal = ({ onInputClick, onCopy, invitedUsers }) => {
                 name="access"
                 id="access"
                 className="dropdown-access share-web-text curser-pointer"
-                value={user.accessUser}
+                value={user.accessUser}   onChange={(e)=> onChangeUserAccess(user, e.target.value)}
+
               >
                 <option value="Full access">Full access</option>
                 <option value="Can edit">Can edit</option>
