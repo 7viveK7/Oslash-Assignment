@@ -56,7 +56,7 @@ const SearchModal = ({onInvite}) => {
       return;
     }
     const filterResult = results.filter((result) =>
-      result.name.includes(searchString)
+      result.name.toLowerCase().includes(searchString.toLowerCase())
     );
     setResults(filterResult);
     // eslint-disable-next-line

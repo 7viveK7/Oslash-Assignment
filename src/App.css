@@ -121,7 +121,7 @@
   background: #ffffff;
   /* gray/300 */
 
-  border: 1px solid #d1d5db;
+ 
   /* shadow/sm */
 
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
@@ -523,12 +523,9 @@ font-style: normal; */
   margin-right: 12px !important;
 }
 .showshare-window {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
+ 
+  margin-top: 258px !important;
+  margin-left: 124px !important;
 }
 input.search-input-scd:focus-visible {
   outline: none !important;
