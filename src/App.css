@@ -517,14 +517,14 @@ font-style: normal; */
   background: #6b7280;
   border-radius: 6px;
 }
-.wd {
+.wd { 
   width: 24px !important;
   height: 24px !important;
   margin-right: 12px !important;
 }
 .showshare-window {
  
-  margin-top: 258px !important;
+  margin-top: 150px !important;
   margin-left: 124px !important;
 }
 input.search-input-scd:focus-visible {
