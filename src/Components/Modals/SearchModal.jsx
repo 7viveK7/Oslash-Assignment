@@ -8,37 +8,37 @@ import clsx from "clsx";
 
 const initalResults = [
   {
-    name: "Wade Cooper",
+    name: "Vivek JB",
     image: people1,
     type: "person",
     id: 1,
-    email:"wade@oslash.com"
+    email: "wade@oslash.com"
   },
- 
+
   {
     name: "Tom Cook",
     image: people2,
     type: "person",
     id: 4,
-    email:"tom@oslash.com"
+    email: "tom@oslash.com"
   },
   {
     name: "Engineering",
     firstLatter: "E",
     type: "group",
     id: 3,
-    email:"Engineering@oslash.com"
+    email: "Engineering@oslash.com"
   },
   {
     name: "Marketing",
     firstLatter: "M",
     type: "group",
     id: 4,
-    email:"Marketing@oslash.com"
+    email: "Marketing@oslash.com"
   },
 ];
 
-const SearchModal = ({onInvite}) => {
+const SearchModal = ({ onInvite }) => {
 
   const [results, setResults] = useState(initalResults);
   const [users, setUsers] = useState([]);
@@ -46,7 +46,7 @@ const SearchModal = ({onInvite}) => {
   const [searchString, setSearchString] = useState("");
   const inputRef = useRef();
   const [selectedInvite, setSelectedInvite] = useState(null);
-  const [accessUser, setAccessUser]=useState('Full access')
+  const [accessUser, setAccessUser] = useState('Full access')
 
   // const users = results.filter((result) => result.type === "person");
   // const groups = results.filter((result) => result.type === "group");
@@ -77,7 +77,7 @@ const SearchModal = ({onInvite}) => {
   const selectString = (event) => {
     if (event.code === "Enter" && results.length === 1) {
       setSelectedInvite(results[0]);
-      
+
       setSearchString("");
     }
   };
@@ -93,7 +93,7 @@ const SearchModal = ({onInvite}) => {
                 {selectedInvite && (
                   <div className="pill">
                     <span>{selectedInvite?.name}</span>
-                    <RxCross2 onClick={() => {setSelectedInvite(false)}} className="cross" />
+                    <RxCross2 onClick={() => { setSelectedInvite(false) }} className="cross" />
                   </div>
                 )}
               </div>
@@ -113,7 +113,7 @@ const SearchModal = ({onInvite}) => {
                 name="access"
                 id="accessn"
                 className="dropdown-access share-web-text curser-pointer"
-                onChange={(e)=>setAccessUser(e.target.value)}
+                onChange={(e) => setAccessUser(e.target.value)}
               >
                 <option value="Full access">Full access</option>
                 <option value="Can edit">Can edit</option>
@@ -125,7 +125,7 @@ const SearchModal = ({onInvite}) => {
               <button
                 type="button"
                 className="search-button-sdc curser-pointer"
-                onClick={() => onInvite({accessUser, ...selectedInvite})} //accessuser
+                onClick={() => onInvite({ accessUser, ...selectedInvite })} //accessuser
               >
                 Invite
               </button>
@@ -167,8 +167,8 @@ const SearchModal = ({onInvite}) => {
             {!selectedInvite &&
               groups.map((eachGroup) => (
                 <div className="each-row" key={eachGroup.id}
-                onClick={() => setSelectedInvite(eachGroup)}
-                
+                  onClick={() => setSelectedInvite(eachGroup)}
+
                 >
                   <div className="left-side share-web-text curser-pointer">
                     <span className="groups-name wd">
@@ -177,7 +177,7 @@ const SearchModal = ({onInvite}) => {
                     <span className="people-name">{eachGroup.name}</span>
                   </div>
                 </div>
-              ))} 
+              ))}
 
             {selectedInvite && (
               <div
